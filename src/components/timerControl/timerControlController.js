@@ -54,6 +54,7 @@ export default class TimerControlController extends Component {
 
     /**
      * Handler function for start timer button click.
+     * it invokes startTimer dispatch function
      */
     handleStartButtonClick () {
         const {startTimer, timerValue} = this.props;
@@ -63,6 +64,7 @@ export default class TimerControlController extends Component {
 
     /**
      * Handler function for pause timer button click.
+     * it invokes pauseTimer dispatch function.
      */
     handlePauseButtonClick () {
         this.props.pauseTimer();
@@ -70,6 +72,7 @@ export default class TimerControlController extends Component {
 
     /**
      * Handler function for stop timer button click.
+     * it invokes stopTimer dispatch function.
      */
     handleStopButtonClick () {
         const {stopTimer, timerValue} = this.props;
@@ -85,6 +88,7 @@ export default class TimerControlController extends Component {
 
     /**
      * Handler function for Lap timer button click.
+     * It invokes lapTimer dispatch function.
      */
     handleLapButtonClick () {
         const {lapTimer, timerValue} = this.props;
@@ -94,6 +98,9 @@ export default class TimerControlController extends Component {
 
     /**
      * Handler function for key press event.
+     * Only 2 keys are supported. It works only when timer is in running state.
+     * - Space bar - Adds Lap.
+     * - Backspace - Merges current lap to previous lap.
      * @param event
      */
     handleKeyDown (event) {

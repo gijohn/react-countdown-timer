@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Lap /> tests snapshot test on paused state 1`] = `null`;
+
+exports[`<Lap /> tests snapshot test on paused state with laps 1`] = `
+<div
+  className="flex flex-col laps-container"
+>
+  <div
+    className="lap-header"
+  >
+    Laps
+  </div>
+  <div
+    className="laps"
+  >
+    2
+    . 
+    00:00:02.000
+  </div>
+  <div
+    className="laps"
+  >
+    1
+    . 
+    00:00:03.000
+  </div>
+</div>
+`;
+
+exports[`<Lap /> tests snapshot test on running state 1`] = `null`;
+
+exports[`<Lap /> tests snapshot test on running state with laps 1`] = `
+<div
+  className="flex flex-col laps-container"
+>
+  <div
+    className="lap-header"
+  >
+    Laps
+  </div>
+  <div
+    className="laps"
+  >
+    2
+    . 
+    00:00:02.000
+  </div>
+  <div
+    className="laps"
+  >
+    1
+    . 
+    00:00:03.000
+  </div>
+</div>
+`;
+
+exports[`<Lap /> tests snapshot test on stopped state 1`] = `null`;
+
+exports[`<Lap /> tests snapshot test on stopped state with laps 1`] = `
+<div
+  className="flex flex-col laps-container"
+>
+  <div
+    className="lap-header"
+  >
+    Laps
+  </div>
+  <div
+    className="flex laps lap-container"
+  >
+    <div
+      className="flex lap-index"
+    >
+      1
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Start Time
+        </div>
+        <div>
+          00:00:04.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          End Time
+        </div>
+        <div>
+          00:00:03.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Duration
+        </div>
+        <div>
+          00:00:01.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Threshold Exceeded
+        </div>
+        <div>
+          No
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="flex laps lap-container"
+  >
+    <div
+      className="flex lap-index"
+    >
+      2
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Start Time
+        </div>
+        <div>
+          00:00:03.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          End Time
+        </div>
+        <div>
+          00:00:02.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Duration
+        </div>
+        <div>
+          00:00:01.000
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="lap-label"
+        >
+          Threshold Exceeded
+        </div>
+        <div>
+          No
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
