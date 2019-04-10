@@ -1,0 +1,51 @@
+.button {
+    max-width: 75px;
+    min-width: 75px;
+    height: 30px;
+    border-radius: .25rem;
+    border: .0625rem solid transparent;
+    letter-spacing: 0;
+    padding: 0;
+    min-height: auto;
+    cursor: pointer;
+    text-transform: none;
+    background-color: #0ac391;
+    line-height: 10px!important;
+
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.button:disabled {
+    background-color: #8c8c81;
+    cursor: not-allowed;
+}
+
+.button:not(:first-child) {
+    margin-left: 8px;
+}
+
+.control-container {
+    margin-bottom: 8px;
+}
+
+.control-container:focus {
+    outline: none;
+}

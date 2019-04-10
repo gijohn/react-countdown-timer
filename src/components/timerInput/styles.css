@@ -1,0 +1,10 @@
+.label {
+    flex: 0 0 100px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.input-text {
+    font-size: 14px;
+    width: 75%;
+}
