@@ -26,3 +26,7 @@
 .lap-label {
     flex: 0 0 125px
 }
+
+.bg-red {
+    background-color: #ff9294;
+}

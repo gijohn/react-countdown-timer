@@ -121,10 +121,11 @@ export default class TimerControlController extends Component {
      * @return {*}
      */
     render () {
-        const {status} = this.props;
+        const {status, timerValue} = this.props;
         return (
             <TimerControlView
                 status={status}
+                timerValue={timerValue}
                 onStartButtonClick={this.handleStartButtonClick}
                 onStopButtonClick={this.handleStopButtonClick}
                 onPauseButtonClick={this.handlePauseButtonClick}

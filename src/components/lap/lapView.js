@@ -13,30 +13,47 @@ import {STATUS_STOPPED} from "../../constants";
  */
 export default class LapView extends Component {
     render () {
-        const {laps, status, threshold} = this.props;
+        let {laps, status, threshold, timerValue, lastLapStartTime} = this.props;
 
-        if (laps) {
-            if (status === STATUS_STOPPED) {
-                return (
-                    <div className={'flex flex-col laps-container'}>
-                        <div className={'lap-header'}>Laps</div>
-                        {laps.map((lap, i) => <LapResult key={lap.startTime} lap={lap} threshold={threshold} index={i + 1} />)}
-                    </div>
-                );
-            } else if (laps.length > 1) {
-                return (
-                    <div className={'flex flex-col laps-container'}>
-                        <div className={'lap-header'}>Laps</div>
-                        {laps.slice(1).reverse().map((lap, i) => <div className={'laps'}
-                                                                      key={lap.startTime}>{laps.length - i - 1}. {formatLap(lap.startTime)}</div>)}
-                    </div>
-                )
-            } else {
-                return null;
-            }
-        } else {
-            return null;
+        if (status !== STATUS_STOPPED) {
+            laps = laps.slice().reverse();
         }
+
+        return (
+            <div className={'flex flex-col laps-container'}>
+                <div className={'lap-header'}>Laps</div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Lap#</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Elapsed Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        laps.map((lap, i) => {
+                            const lapNumber = status === STATUS_STOPPED ? i + 1 : laps.length - i;
+                            const startTime = lap.startTime;
+                            const endTime = lap.endTime;
+                            const elapsedTime = status === STATUS_STOPPED ? lap.endTime : (i === 0 ? timerValue : lap.endTime);
+                            const lapsedTime = startTime - elapsedTime;
+
+                                return (
+                                    <tr className={`${lapsedTime > threshold ? 'bg-red' : ''}`}>
+                                        {
+                                                addTableRow(lapNumber, formatLap(startTime), endTime ? formatLap(elapsedTime) : '', formatLap(lapsedTime))
+                                        }
+                                    </tr>
+                                );
+                            }
+                        )
+                    }
+                    </tbody>
+                </table>
+            </div>
+        );
     }
 }
 
@@ -51,6 +68,8 @@ const formatLap = (lapTime) => {
 
     return `${isNegative ? '(-)' : ''}${padZeros(timeObj.hours, 2)}:${padZeros(timeObj.minutes, 2)}:${padZeros(timeObj.seconds, 2)}.${padZeros(timeObj.milliSeconds, 3)}`;
 };
+
+const addTableRow = (...args) => args.map(value => <td>{value}</td>);
 
 /**
  * Component to display the lap times in readable format

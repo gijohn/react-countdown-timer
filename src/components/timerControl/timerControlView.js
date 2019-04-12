@@ -15,11 +15,11 @@ import './styles.css';
  */
 export default class TimerControlView extends Component {
     render () {
-        const {onStartButtonClick, onStopButtonClick, onPauseButtonClick, onResumeButtonClick, onLapButtonClick, onKeyDown, status, setRef} = this.props;
+        const {onStartButtonClick, onStopButtonClick, onPauseButtonClick, onResumeButtonClick, onLapButtonClick, onKeyDown, status, setRef, timerValue} = this.props;
 
         return (
             <div className={'flex flex1 justify-content-ce control-container'} tabIndex={0} onKeyDown={onKeyDown} ref={setRef}>
-                {status === STATUS_STOPPED && <input tabIndex={-1} type={'button'} id={'btnStartTimer'} className={'button'} onClick={onStartButtonClick} value={'Start'} /> }
+                {status === STATUS_STOPPED && <input tabIndex={-1} type={'button'} id={'btnStartTimer'} className={'button'} onClick={onStartButtonClick} value={'Start'} disabled={timerValue === 0} /> }
                 {status !== STATUS_STOPPED && <input tabIndex={-1} type={'button'} id={'btnStopTimer'} className={'button'} onClick={onStopButtonClick} value={'Stop'} /> }
                 {status === STATUS_RUNNING && <input tabIndex={-1} type={'button'} id={'btnPauseTimer'} className={'button'} onClick={onPauseButtonClick} value={'Pause'} /> }
                 {status === STATUS_PAUSED && <input tabIndex={-1} type={'button'} id={'btnResumeTimer'} className={'button'} onClick={onResumeButtonClick} value={'Resume'} /> }

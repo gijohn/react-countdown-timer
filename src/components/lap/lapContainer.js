@@ -21,7 +21,8 @@ const mapStateToProps = (state) => {
     return {
         laps: state.laps,
         status: state.status,
-        threshold: state.threshold
+        threshold: state.threshold,
+        timerValue: state.timerValue
     };
 }
 
