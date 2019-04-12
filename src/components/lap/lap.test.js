@@ -11,7 +11,8 @@ describe('<Lap /> tests', () => {
     it('snapshot test on stopped state', () => {
         const store = mockStore({
             threshold: 5000,
-            status: STATUS_STOPPED
+            status: STATUS_STOPPED,
+            laps: []
         });
 
         const component = renderer.create(
@@ -51,7 +52,8 @@ describe('<Lap /> tests', () => {
     it('snapshot test on running state', () => {
         const store = mockStore({
             threshold: 5000,
-            status: STATUS_RUNNING
+            status: STATUS_RUNNING,
+            laps: []
         });
 
         const component = renderer.create(
@@ -94,7 +96,8 @@ describe('<Lap /> tests', () => {
     it('snapshot test on paused state', () => {
         const store = mockStore({
             threshold: 5000,
-            status: STATUS_PAUSED
+            status: STATUS_PAUSED,
+            laps: []
         });
 
         const component = renderer.create(

@@ -12,7 +12,8 @@ describe('<CountDownTimer /> tests', () => {
         const store = mockStore({
             threshold: 5000,
             timerValue: 12345678,
-            status: STATUS_STOPPED
+            status: STATUS_STOPPED,
+            laps: []
         });
 
         const component = renderer.create(
@@ -54,7 +55,8 @@ describe('<CountDownTimer /> tests', () => {
         const store = mockStore({
             threshold: 5000,
             timerValue: 12345678,
-            status: STATUS_RUNNING
+            status: STATUS_RUNNING,
+            laps: []
         });
 
         const component = renderer.create(
@@ -99,7 +101,8 @@ describe('<CountDownTimer /> tests', () => {
         const store = mockStore({
             threshold: 5000,
             timerValue: 12345678,
-            status: STATUS_PAUSED
+            status: STATUS_PAUSED,
+            laps: []
         });
 
         const component = renderer.create(

@@ -52,6 +52,34 @@ exports[`<CountDownTimer /> tests snapshot test on paused state 1`] = `
         value="Lap"
       />
     </div>
+    <div
+      className="flex flex-col laps-container"
+    >
+      <div
+        className="lap-header"
+      >
+        Laps
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
+              Start Time
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
   </div>
 </div>
 `;
@@ -116,20 +144,74 @@ exports[`<CountDownTimer /> tests snapshot test on paused state with laps 1`] = 
       >
         Laps
       </div>
-      <div
-        className="laps"
-      >
-        2
-        . 
-        00:00:02.000
-      </div>
-      <div
-        className="laps"
-      >
-        1
-        . 
-        00:00:03.000
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
+              Start Time
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className=""
+          >
+            <td>
+              3
+            </td>
+            <td>
+              00:00:02.000
+            </td>
+            <td>
+              
+            </td>
+            <td>
+              (-)03:25:43.678
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td>
+              2
+            </td>
+            <td>
+              00:00:03.000
+            </td>
+            <td>
+              00:00:02.000
+            </td>
+            <td>
+              00:00:01.000
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td>
+              1
+            </td>
+            <td>
+              00:00:04.000
+            </td>
+            <td>
+              00:00:03.000
+            </td>
+            <td>
+              00:00:01.000
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -186,6 +268,34 @@ exports[`<CountDownTimer /> tests snapshot test on running state 1`] = `
         type="button"
         value="Lap"
       />
+    </div>
+    <div
+      className="flex flex-col laps-container"
+    >
+      <div
+        className="lap-header"
+      >
+        Laps
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
+              Start Time
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
     </div>
   </div>
 </div>
@@ -251,20 +361,74 @@ exports[`<CountDownTimer /> tests snapshot test on running state with laps 1`] =
       >
         Laps
       </div>
-      <div
-        className="laps"
-      >
-        2
-        . 
-        00:00:02.000
-      </div>
-      <div
-        className="laps"
-      >
-        1
-        . 
-        00:00:03.000
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
+              Start Time
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className=""
+          >
+            <td>
+              3
+            </td>
+            <td>
+              00:00:02.000
+            </td>
+            <td>
+              
+            </td>
+            <td>
+              (-)03:25:43.678
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td>
+              2
+            </td>
+            <td>
+              00:00:03.000
+            </td>
+            <td>
+              00:00:02.000
+            </td>
+            <td>
+              00:00:01.000
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td>
+              1
+            </td>
+            <td>
+              00:00:04.000
+            </td>
+            <td>
+              00:00:03.000
+            </td>
+            <td>
+              00:00:01.000
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -1090,12 +1254,41 @@ exports[`<CountDownTimer /> tests snapshot test on stopped state 1`] = `
     >
       <input
         className="button"
+        disabled={false}
         id="btnStartTimer"
         onClick={[Function]}
         tabIndex={-1}
         type="button"
         value="Start"
       />
+    </div>
+    <div
+      className="flex flex-col laps-container"
+    >
+      <div
+        className="lap-header"
+      >
+        Laps
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
+              Start Time
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
     </div>
   </div>
 </div>
@@ -1921,6 +2114,7 @@ exports[`<CountDownTimer /> tests snapshot test on stopped state with laps 1`] =
     >
       <input
         className="button"
+        disabled={false}
         id="btnStartTimer"
         onClick={[Function]}
         tabIndex={-1}
@@ -1936,128 +2130,58 @@ exports[`<CountDownTimer /> tests snapshot test on stopped state with laps 1`] =
       >
         Laps
       </div>
-      <div
-        className="flex laps lap-container"
-      >
-        <div
-          className="flex lap-index"
-        >
-          1
-        </div>
-        <div
-          className="flex flex-col"
-        >
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Lap#
+            </th>
+            <th>
               Start Time
-            </div>
-            <div>
+            </th>
+            <th>
+              End Time
+            </th>
+            <th>
+              Elapsed Time
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className=""
+          >
+            <td>
+              1
+            </td>
+            <td>
               00:00:04.000
-            </div>
-          </div>
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              End Time
-            </div>
-            <div>
+            </td>
+            <td>
               00:00:03.000
-            </div>
-          </div>
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              Duration
-            </div>
-            <div>
+            </td>
+            <td>
               00:00:01.000
-            </div>
-          </div>
-          <div
-            className="flex"
+            </td>
+          </tr>
+          <tr
+            className=""
           >
-            <div
-              className="lap-label"
-            >
-              Threshold Exceeded
-            </div>
-            <div>
-              No
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="flex laps lap-container"
-      >
-        <div
-          className="flex lap-index"
-        >
-          2
-        </div>
-        <div
-          className="flex flex-col"
-        >
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              Start Time
-            </div>
-            <div>
+            <td>
+              2
+            </td>
+            <td>
               00:00:03.000
-            </div>
-          </div>
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              End Time
-            </div>
-            <div>
+            </td>
+            <td>
               00:00:02.000
-            </div>
-          </div>
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              Duration
-            </div>
-            <div>
+            </td>
+            <td>
               00:00:01.000
-            </div>
-          </div>
-          <div
-            className="flex"
-          >
-            <div
-              className="lap-label"
-            >
-              Threshold Exceeded
-            </div>
-            <div>
-              No
-            </div>
-          </div>
-        </div>
-      </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
